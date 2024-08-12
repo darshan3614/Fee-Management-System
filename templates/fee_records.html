@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fee Records</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Fee Records</h1>
+    <ul>
+        {% for record in fee_records %}
+        <li>Student ID: {{ record.student_id }}, Amount: {{ record.amount }}, Date Paid: {{ record.date_paid }}, Paid: {{ record.paid }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

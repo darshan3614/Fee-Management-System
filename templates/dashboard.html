@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Welcome to the Dashboard</h1>
+    <a href="{{ url_for('pay_fee') }}">Pay Fee</a>
+    <h2>Fee Records</h2>
+    <ul>
+        {% for record in fee_records %}
+        <li>Student ID: {{ record.student_id }}, Amount: {{ record.amount }}, Date Paid: {{ record.date_paid }}, Paid: {{ record.paid }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
